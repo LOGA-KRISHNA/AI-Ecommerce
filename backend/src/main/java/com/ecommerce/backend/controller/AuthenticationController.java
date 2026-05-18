@@ -3,6 +3,7 @@ package com.ecommerce.backend.controller;
 import com.ecommerce.backend.dto.CognitoTokenResponseDto;
 import com.ecommerce.backend.dto.TokenDto;
 import com.ecommerce.backend.dto.UrlDto;
+import com.ecommerce.backend.service.UserService;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -33,6 +34,7 @@ public class AuthenticationController {
     private String redirectUri;
 
     private static final ObjectMapper objectMapper = new ObjectMapper();
+//    private final UserService userService;
 
     @GetMapping("/api/auth/url")
     public ResponseEntity<UrlDto> url() {

@@ -2,7 +2,7 @@ import { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import httpService from "../httpService";
 import { useDispatch } from "react-redux";
-import { setToken } from "../authSlice";
+import { setToken } from "../store/authSlice";
 
 export function RedirectPage() {
 

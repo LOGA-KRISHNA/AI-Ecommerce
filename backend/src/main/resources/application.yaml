@@ -2,13 +2,29 @@ spring:
   application:
     name: backend
 
+  datasource:
+    url: jdbc:mysql://localhost:3306/sample
+    username: root
+    password: 2004
+    driver-class-name: com.mysql.cj.jdbc.Driver
+
+  jpa:
+    hibernate:
+      ddl-auto: create
+    show-sql: true
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.MySQLDialect
+
   security:
     oauth2:
       resourceserver:
         jwt:
-          jwt-set-uri: https://cognito-idp.ap-south-1.amazonaws.com/ap-south-1_Tfd0F5MLe/.well-known/jwks.json
+          jwk-set-uri: https://cognito-idp.ap-south-1.amazonaws.com/ap-south-1_Tfd0F5MLe/.well-known/jwks.json
           issuer-uri: https://cognito-idp.ap-south-1.amazonaws.com/ap-south-1_Tfd0F5MLe
           clientId: 73tq8kr3f2vnr6lvisgg36bkhj
           clientSecret: jpqqosgm5r7tr2lpasepgl8hmvd90g1ntt6f7ml1eqfgfa74ijv
           redirect-uri: http://localhost:5173/oauth2/idpresponse
-auth.cognitoUri: https://ap-south-1tfd0f5mle.auth.ap-south-1.amazoncognito.com
+
+auth:
+  cognitoUri: https://ap-south-1tfd0f5mle.auth.ap-south-1.amazoncognito.com
